@@ -28,3 +28,9 @@ module "do_registry" {
   source      = "./modules/digital-ocean/registry"
   name_prefix = "sisyphus"
 }
+
+module "do_cluster" {
+  source      = "./modules/digital-ocean/cluster"
+  name_prefix = "sisyphus"
+  depends_on  = [module.do_registry]
+}
