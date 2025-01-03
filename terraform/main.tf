@@ -34,3 +34,10 @@ module "do_cluster" {
   name_prefix = "sisyphus"
   depends_on  = [module.do_registry]
 }
+
+module "do_database" {
+  source         = "./modules/digital-ocean/database"
+  name_prefix    = "sisyphus"
+  client_ip_addr = var.client_ip_addr
+  k8s_cluster_id = module.do_cluster.cluster_id
+}
