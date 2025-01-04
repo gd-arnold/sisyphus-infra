@@ -36,3 +36,18 @@ variable "db_size" {
   type    = string
   default = "db-s-1vcpu-1gb"
 }
+
+variable "db_user" {
+  type    = string
+  default = "doadmin"
+}
+
+variable "pool_mode" {
+  type    = string
+  default = "transaction"
+}
+
+variable "pool_size" {
+  type    = number
+  default = 10
+}
