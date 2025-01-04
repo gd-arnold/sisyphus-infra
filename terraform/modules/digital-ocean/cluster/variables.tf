@@ -8,6 +8,11 @@ variable "region" {
   default = "fra1"
 }
 
+variable "version_slug" {
+  type    = string
+  default = "1.32.2-do.1"
+}
+
 variable "node_size" {
   type    = string
   default = "s-1vcpu-2gb"

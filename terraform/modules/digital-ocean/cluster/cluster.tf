@@ -1,7 +1,7 @@
 resource "digitalocean_kubernetes_cluster" "this" {
   name    = "${var.name_prefix}-cluster"
   region  = var.region
-  version = "latest"
+  version = var.version_slug
 
   node_pool {
     name       = "${var.name_prefix}-node-pool"
@@ -11,3 +11,4 @@ resource "digitalocean_kubernetes_cluster" "this" {
 
   registry_integration = true
 }
+
