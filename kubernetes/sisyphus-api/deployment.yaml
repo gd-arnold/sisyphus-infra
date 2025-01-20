@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sisyphus-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sisyphus-api
+  template:
+    metadata:
+      name: sisyphus-api
+      labels:
+        app: sisyphus-api
+    spec:
+      containers:
+        - name: sisyphus-api
+          image: registry.digitalocean.com/sisyphus-registry/sisyphus-api
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NODE_ENV
+              value: "prod"
+            - name: PORT
+              value: "8080"
