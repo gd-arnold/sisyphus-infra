@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.DO_TOKEN }}
 
       - name: Save DigitalOcean kubeconfig
-        run: doctl kubernetes cluster kubeconfig save 
+        run: doctl kubernetes cluster kubeconfig save sisyphus-cluster
 
       - name: Validate manifests
         run: kubectl apply --dry-run=client -f kubernetes/sisyphus-api
