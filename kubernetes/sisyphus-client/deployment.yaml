@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sisyphus-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sisyphus-client
+  template:
+    metadata:
+      name: sisyphus-client
+      labels:
+        app: sisyphus-client
+    spec:
+      containers:
+        - name: sisyphus-client
+          image: registry.digitalocean.com/sisyphus-registry/sisyphus-client:71937e7
+          ports:
+            - containerPort: 80

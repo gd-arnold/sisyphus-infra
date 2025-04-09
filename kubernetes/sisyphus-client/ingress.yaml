@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sisyphus-client-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      location ~ ^/api {
+        return 404;
+      }
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - sisyphus.garnaudov.com
+      secretName: sisyphus-tls
+  rules:
+    - host: sisyphus.garnaudov.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sisyphus-client-service
+                port:
+                  number: 80
