@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sisyphus-api
-          image: registry.digitalocean.com/sisyphus-registry/sisyphus-api:a87a95c
+          image: registry.digitalocean.com/sisyphus-registry/sisyphus-api:e386d33
           ports:
             - containerPort: 8080
           env:
