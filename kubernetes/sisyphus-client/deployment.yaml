@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: sisyphus-client
-          image: registry.digitalocean.com/sisyphus-registry/sisyphus-client:71937e7
+          image: registry.digitalocean.com/sisyphus-registry/sisyphus-client:aacad74
           ports:
             - containerPort: 80
