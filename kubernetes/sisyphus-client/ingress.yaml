@@ -4,10 +4,7 @@ metadata:
   name: sisyphus-client-ingress
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    nginx.ingress.kubernetes.io/server-snippet: |
-      location ~ ^/api {
-        return 404;
-      }
+    nginx.ingress.kubernetes.io/priority: "100"
 spec:
   ingressClassName: nginx
   tls:
